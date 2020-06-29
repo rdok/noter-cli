@@ -1,3 +1,3 @@
-const name = 'James'
+const getNotes = require('./notes')
 
-console.log(name)
+console.log(getNotes())
