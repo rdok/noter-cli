@@ -1,0 +1,26 @@
+{
+  "name": "noter",
+  "version": "1.0.0",
+  "description": "Basic note taker.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdok/tonec.git"
+  },
+  "keywords": [
+    "nodejs",
+    "node"
+  ],
+  "author": "Rizart Dokollari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdok/tonec/issues"
+  },
+  "homepage": "https://github.com/rdok/tonec#readme",
+  "dependencies": {
+    "validator": "^13.1.1"
+  }
+}
