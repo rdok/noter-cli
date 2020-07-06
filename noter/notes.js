@@ -1,5 +1,12 @@
-const getNotes = function () {
-    return 'Your notes...'
-}
+const getNotes = () => 'Your notes...';
 
-module.exports = getNotes
+const addNote = (title, body) => {
+};
+
+const loadNotes = () => {
+};
+
+module.exports = {
+  getNotes,
+  addNote,
+};
