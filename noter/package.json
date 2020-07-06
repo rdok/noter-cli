@@ -1,36 +1,36 @@
 {
-  "name": "noter",
-  "version": "1.0.0",
-  "description": "Basic note taker.",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./ --fix",
-    "nodemon": "nodemon"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rdok/tonec.git"
-  },
-  "keywords": [
-    "nodejs",
-    "node"
-  ],
-  "author": "Rizart Dokollari",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rdok/tonec/issues"
-  },
-  "homepage": "https://github.com/rdok/tonec#readme",
-  "dependencies": {
-    "chalk": "^4.1.0",
-    "validator": "^13.1.1",
-    "yargs": "^15.3.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.4.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "nodemon": "^2.0.4"
-  }
+    "name": "noter",
+    "version": "1.0.0",
+    "description": "Basic note taker.",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint ./ --fix",
+        "nodemon": "nodemon"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rdok/tonec.git"
+    },
+    "keywords": [
+        "nodejs",
+        "node"
+    ],
+    "author": "Rizart Dokollari",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/rdok/tonec/issues"
+    },
+    "homepage": "https://github.com/rdok/tonec#readme",
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "validator": "^13.1.1",
+        "yargs": "^15.3.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.4.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.22.0",
+        "nodemon": "^2.0.4"
+    }
 }
