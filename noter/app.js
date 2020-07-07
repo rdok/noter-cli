@@ -42,5 +42,4 @@ yargs.command({
   handler() {
   },
 })
-
 console.log(yargs.argv)

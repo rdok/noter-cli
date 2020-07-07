@@ -1,4 +1,5 @@
 const fs = require('fs')
+const log = require('./log')
 
 const dbPath = 'notes.json'
 
@@ -22,8 +23,14 @@ const loadNotes = () => {
 
 const addNote = (title, body) => {
   const notes = loadNotes()
-  notes.push({ title, body })
+  const titleExists = notes.filter((note) => note.title === title).length !== 0
 
+  if (titleExists) {
+    log.error('Note title taken!')
+    return
+  }
+
+  notes.push({ title, body })
   saveNotes(notes)
 }
 
