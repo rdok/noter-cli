@@ -2,39 +2,63 @@ const fs = require('fs')
 const log = require('./log')
 
 const dbPath = 'notes.json'
+let db = null
 
 const getNotes = () => 'Your notes...'
 
 const saveNotes = (notes) => {
   const json = JSON.stringify(notes)
   fs.writeFileSync(dbPath, json)
+  db = json
 }
 
 const loadNotes = () => {
+  if (db !== null) { return db }
+
   let buffer
   try {
     buffer = fs.readFileSync(dbPath)
     const json = buffer.toString()
-    return JSON.parse(json)
+    db = JSON.parse(json)
+    return db
   } catch (error) {
     return []
   }
 }
 
-const addNote = (title, body) => {
+const noteTitleExists = (title) => {
   const notes = loadNotes()
-  const titleExists = notes.filter((note) => note.title === title).length !== 0
+  return notes.filter((note) => note.title === title).length !== 0
+}
 
-  if (titleExists) {
+const add = (title, body) => {
+  const notes = loadNotes()
+
+  if (noteTitleExists(title)) {
     log.error('Note title taken!')
     return
   }
 
   notes.push({ title, body })
   saveNotes(notes)
+  log.success('Note saved!')
+}
+
+const removeByTitle = (title) => {
+  const notes = loadNotes()
+
+  if (!noteTitleExists(title)) {
+    log.error('Note title does not exists!')
+    return
+  }
+
+  const reducedNotes = notes.filter((note) => note.title !== title)
+  saveNotes(reducedNotes)
+  log.success('Note removed!')
 }
 
 module.exports = {
   getNotes,
-  addNote,
+  add,
+  removeByTitle,
 }
