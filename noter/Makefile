@@ -1,3 +1,6 @@
+list-notes:
+	node app.js list
+
 add-note:
 	node app.js add --title="Cyberpunk2077" --body="Lorem Ipsum"
 

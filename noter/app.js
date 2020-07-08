@@ -17,23 +17,19 @@ yargs.command({
   builder: {
     title: { describe: 'Note title', demandOption: true, type: 'string' },
   },
-  handler(argv) {
-    notes.removeByTitle(argv.title)
-  },
+  handler(argv) { notes.removeByTitle(argv.title) },
 })
 
 yargs.command({
   command: 'list',
   describe: 'List notes.',
-  handler() {
-  },
+  handler() { notes.list() },
 })
 
 yargs.command({
   command: 'read',
   describe: 'Read notes.',
-  handler() {
-  },
+  handler() { },
 })
 
 yargs.parse()

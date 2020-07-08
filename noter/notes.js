@@ -28,6 +28,7 @@ const loadNotes = () => {
 
 const noteTitleExists = (title) => {
   const notes = loadNotes()
+
   return notes.filter((note) => note.title === title).length !== 0
 }
 
@@ -42,6 +43,18 @@ const add = (title, body) => {
   notes.push({ title, body })
   saveNotes(notes)
   log.success('Note saved!')
+}
+
+const list = () => {
+  const notes = loadNotes()
+
+  log.header('==============================')
+  log.header('          Notes               ')
+  log.header('==============================')
+  notes.forEach((note) => {
+    log.info(`- ${note.title}`)
+  })
+  log.header('==============================')
 }
 
 const removeByTitle = (title) => {
@@ -61,4 +74,5 @@ module.exports = {
   getNotes,
   add,
   removeByTitle,
+  list,
 }
