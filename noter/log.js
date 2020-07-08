@@ -2,7 +2,16 @@ const chalk = require('chalk')
 
 const header = (message) => {
   // eslint-disable-next-line no-console
-  console.log(chalk.white.bold.bgBlue(message))
+  console.log(chalk.white.bold.bgBlue('=============================='))
+  // eslint-disable-next-line no-console
+  console.log(chalk.white.bold.bgBlue(`${message}`))
+  // eslint-disable-next-line no-console
+  console.log(chalk.white.bold.bgBlue('=============================='))
+}
+
+const closeHeader = () => {
+  // eslint-disable-next-line no-console
+  console.log(chalk.white.bold.bgBlue('=============================='))
 }
 
 const info = (message) => {
@@ -21,5 +30,5 @@ const success = (message) => {
 }
 
 module.exports = {
-  error, success, header, info,
+  error, success, header, info, closeHeader,
 }

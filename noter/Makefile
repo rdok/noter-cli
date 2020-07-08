@@ -1,6 +1,9 @@
 list-notes:
 	node app.js list
 
+read-note:
+	node app.js read --title="Cyberpunk2077"
+
 add-note:
 	node app.js add --title="Cyberpunk2077" --body="Lorem Ipsum"
 

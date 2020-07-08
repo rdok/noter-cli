@@ -29,7 +29,7 @@ const loadNotes = () => {
 const noteTitleExists = (title) => {
   const notes = loadNotes()
 
-  return notes.filter((note) => note.title === title).length !== 0
+  return notes.find((note) => note.title === title)
 }
 
 const add = (title, body) => {
@@ -48,13 +48,25 @@ const add = (title, body) => {
 const list = () => {
   const notes = loadNotes()
 
-  log.header('==============================')
-  log.header('          Notes               ')
-  log.header('==============================')
+  log.header('Notes')
   notes.forEach((note) => {
     log.info(`- ${note.title}`)
   })
-  log.header('==============================')
+  log.closeHeader()
+}
+
+const read = (title) => {
+  const notes = loadNotes()
+  const noteFound = notes.find((note) => note.title === title)
+
+  if (!noteFound) {
+    log.error(`Unable to find note with title: ${title}`)
+    return
+  }
+
+  log.header(`${title}`)
+  log.info(`${noteFound.body}`)
+  log.closeHeader()
 }
 
 const removeByTitle = (title) => {
@@ -71,8 +83,5 @@ const removeByTitle = (title) => {
 }
 
 module.exports = {
-  getNotes,
-  add,
-  removeByTitle,
-  list,
+  getNotes, add, removeByTitle, list, read,
 }
