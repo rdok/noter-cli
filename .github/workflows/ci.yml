@@ -4,6 +4,8 @@ on:
     branches: [ main ]
   schedule:
     - cron: '0 12 * * *'
+  push:
+    branches: [ main ]
 jobs:
   linter:
     runs-on: ubuntu-20.04
