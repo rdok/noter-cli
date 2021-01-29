@@ -1,0 +1,15 @@
+name: CI
+on:
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 12 * * *'
+  push:
+    branches: [ main ]
+jobs:
+  linter:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run lint
