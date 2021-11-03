@@ -24,7 +24,7 @@
     "homepage": "https://github.com/rdok/tonec#readme",
     "dependencies": {
         "chalk": "^4.1.0",
-        "validator": "^13.5.2",
+        "validator": "^13.7.0",
         "yargs": "^15.4.1"
     },
     "devDependencies": {
